@@ -7,8 +7,8 @@ import java.util.List;
  */
 public abstract class AbstractGame<T extends Player> implements Game {
 
-    private T player1;
-    private T player2;
+    protected T player1;
+    protected T player2;
 
 
 
