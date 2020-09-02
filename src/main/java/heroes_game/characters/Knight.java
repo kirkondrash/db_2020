@@ -1,6 +1,6 @@
 package heroes_game.characters;
 
-public class Knight extends Human {
+public class Knight extends AbstractHuman {
 
     public static final String[] KNIGHT_NAMES = {"John", "Jack"};
 

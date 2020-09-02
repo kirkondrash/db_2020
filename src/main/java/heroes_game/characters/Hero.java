@@ -10,6 +10,10 @@ public interface Hero {
 
     int getHp();
 
+    String getName();
+
+    void deduplicateName();
+
     void weakenPower(int pts);
 
     void dealDamage(int dmg);

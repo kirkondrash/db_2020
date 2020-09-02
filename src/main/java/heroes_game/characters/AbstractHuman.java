@@ -2,9 +2,9 @@ package heroes_game.characters;
 
 import java.util.Random;
 
-public abstract class Human extends AbstractHero {
+public abstract class AbstractHuman extends AbstractHero {
 
-    public Human(String name, int power, int hp) {
+    public AbstractHuman(String name, int power, int hp) {
         super(name, power, hp);
     }
 

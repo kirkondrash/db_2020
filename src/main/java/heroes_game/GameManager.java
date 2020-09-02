@@ -7,6 +7,9 @@ public class GameManager {
     public static void main(String[] args) {
         Hero h1 = HeroFactory.createHero();
         Hero h2 = HeroFactory.createHero();
+        if (h1.getName().equals(h2.getName())) {
+            h1.deduplicateName();
+        }
         fight(h1,h2);
     }
 

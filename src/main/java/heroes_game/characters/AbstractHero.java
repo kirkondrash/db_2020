@@ -1,22 +1,19 @@
 package heroes_game.characters;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Random;
 
 @Getter
+@AllArgsConstructor
 public abstract class AbstractHero implements Hero {
     protected static Random random = new Random();
 
     protected String name;
     protected int power;
     protected int hp;
-
-    public AbstractHero(String name, int power, int hp) {
-        this.name = name;
-        this.power = power;
-        this.hp = hp;
-    }
 
     @Override
     public boolean isAlive() {
@@ -43,6 +40,10 @@ public abstract class AbstractHero implements Hero {
         } else {
             power -= pts;
         }
+    }
+
+    public void deduplicateName(){
+        name = "Other " + name;
     }
 
     public String toString() {

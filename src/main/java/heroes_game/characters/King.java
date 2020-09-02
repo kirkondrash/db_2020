@@ -1,6 +1,6 @@
 package heroes_game.characters;
 
-public class King extends Human {
+public class King extends AbstractHuman {
 
     public static final String[] KING_NAMES = {"Eomer", "Theoden", "Aragorn"};
 
