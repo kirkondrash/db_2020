@@ -1,6 +1,6 @@
-package homework.enums.http_classes.impl;
+package homework.class_loading.http_classes.impl;
 
-import homework.enums.http_classes.HttpClass;
+import homework.class_loading.http_classes.HttpClass;
 
 public class ClientError extends HttpClass {
 

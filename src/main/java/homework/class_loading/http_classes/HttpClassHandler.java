@@ -1,4 +1,4 @@
-package homework.enums.http_classes;
+package homework.class_loading.http_classes;
 
 public interface HttpClassHandler {
     void work();

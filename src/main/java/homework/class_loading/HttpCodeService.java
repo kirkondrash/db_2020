@@ -1,6 +1,6 @@
-package homework.enums;
+package homework.class_loading;
 
-import homework.enums.http_classes.HttpClassHandler;
+import homework.class_loading.http_classes.HttpClassHandler;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

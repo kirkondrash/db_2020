@@ -1,7 +1,7 @@
-package homework.enums;
+package homework.class_loading;
 
-import homework.enums.http_classes.HttpClass;
-import homework.enums.http_classes.HttpClassHandler;
+import homework.class_loading.http_classes.HttpClass;
+import homework.class_loading.http_classes.HttpClassHandler;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
