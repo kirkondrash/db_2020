@@ -1,9 +1,7 @@
 package date_time;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -15,46 +13,29 @@ import java.util.Locale;
 public class Main {
 
 
-    public Date convert(LocalDate date) {
-        // todo finish this
-        return null;
+    public static Date convert(LocalDate date) {
+        return Date.from(date.atStartOfDay().toInstant(ZoneOffset.UTC));
     }
 
-    public LocalDateTime convert(Date date) {
-        // todo finish this
-        return null;
+    public static LocalDateTime convert(Date date) {
+        return LocalDateTime.ofInstant(date.toInstant(), ZoneId.systemDefault());
     }
 
         // 1981/02/30&18:20
     public static int daysBetween(String firstDate, String lastDate) {
         //JSR 310
-        //todo finish this
-        return 0;
+        LocalDate parsedFirstDate = LocalDateTime.parse(firstDate, DateTimeFormatter.ofPattern("yyyy/MM/dd&HH:mm")).toLocalDate();
+        LocalDate parsedLastDate = LocalDateTime.parse(lastDate, DateTimeFormatter.ofPattern("yyyy/MM/dd&HH:mm")).toLocalDate();
+        // the answer depends whether we include the exact dates of period beginning and ending
+        return (int) ChronoUnit.DAYS.between(parsedFirstDate,parsedLastDate);
     }
 
 
 
     public static void main(String[] args) {
 
-
-
-        LocalTime now1 = LocalTime.now();
-//        LocalDateTime.of(1932,12,12,12,12,12)
-        LocalDate now = LocalDate.now();
-        LocalDate yest = now.minusDays(1);
-        LocalDate date = now.withYear(2010);
-        String displayName = date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
-        System.out.println("displayName = " + displayName);
-
-//        Duration
-        long between = ChronoUnit.DAYS.between(date, now);
-        System.out.println("between = " + between);
-
-//
-//        String str = "java";
-//        str = str.toUpperCase();
-//
-//        Date date = new Date();
-//        System.out.println("date = " + date.getYear());
+        System.out.println(daysBetween("1981/03/20&18:20", "1981/03/30&18:20"));
+        System.out.println(convert(new Date()));
+        System.out.println(convert(LocalDate.now().minusDays(42)));
     }
 }
