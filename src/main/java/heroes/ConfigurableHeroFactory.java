@@ -20,7 +20,7 @@ public class ConfigurableHeroFactory implements HeroFactory {
 
     @Override
     public Hero createNewHero() {
-        List<Function<String,Hero>> heroCreators = heroesConfig.getHeroCreators();
+        List<Function<String, Hero>> heroCreators = heroesConfig.getHeroCreators();
         return RandomUtil.randomItem(heroCreators).apply(faker.funnyName().name());
 
     }
