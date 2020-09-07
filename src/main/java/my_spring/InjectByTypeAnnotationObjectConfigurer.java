@@ -1,6 +1,5 @@
 package my_spring;
 
-import heroes.RandomUtil;
 import lombok.SneakyThrows;
 
 import java.lang.reflect.Field;
@@ -9,16 +8,15 @@ import java.lang.reflect.Field;
  * @author Evgeny Borisov
  */
 public class InjectByTypeAnnotationObjectConfigurer implements ObjectConfigurer {
-    @Override
     @SneakyThrows
+    @Override
     public void configure(Object t) {
-        Class<?> implClass = t.getClass();
-        Field[] fields = implClass.getDeclaredFields();
+        Field[] fields = t.getClass().getDeclaredFields();
         for (Field field : fields) {
-            InjectByType annotation = field.getAnnotation(InjectByType.class);
-            if (annotation != null) {
+            if (field.isAnnotationPresent(InjectByType.class)) {
+                Object value = ObjectFactory.getInstance().createObject(field.getType());
                 field.setAccessible(true);
-                field.set(t, ObjectFactory.getInstance().createObject(field.getType()));
+                field.set(t,value);
             }
         }
     }
