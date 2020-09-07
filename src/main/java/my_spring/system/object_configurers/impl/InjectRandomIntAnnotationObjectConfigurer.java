@@ -1,7 +1,9 @@
-package my_spring;
+package my_spring.system.object_configurers.impl;
 
 import heroes.RandomUtil;
 import lombok.SneakyThrows;
+import my_spring.system.annotations.InjectRandomInt;
+import my_spring.system.object_configurers.ObjectConfigurer;
 
 import java.lang.reflect.Field;
 

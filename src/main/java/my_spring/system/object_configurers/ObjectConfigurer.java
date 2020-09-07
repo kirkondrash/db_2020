@@ -1,4 +1,4 @@
-package my_spring;
+package my_spring.system.object_configurers;
 
 /**
  * @author Evgeny Borisov

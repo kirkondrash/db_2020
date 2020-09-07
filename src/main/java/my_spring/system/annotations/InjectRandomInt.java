@@ -1,4 +1,5 @@
-package my_spring;/**
+package my_spring.system.annotations;
+/**
  * @author Evgeny Borisov
  */
 

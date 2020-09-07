@@ -1,4 +1,4 @@
-package my_spring;/**
+package my_spring.system.annotations;/**
  * @author Evgeny Borisov
  */
 
@@ -7,7 +7,5 @@ import java.lang.annotation.Retention;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Retention(RUNTIME)
-public @interface InjectByType {  //@Autowired
-//    boolean required();
+public @interface Singleton {
 }
-

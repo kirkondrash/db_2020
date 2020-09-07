@@ -1,5 +1,7 @@
 package my_spring;
 
+import my_spring.system.annotations.InjectRandomInt;
+
 import javax.annotation.PostConstruct;
 
 /**

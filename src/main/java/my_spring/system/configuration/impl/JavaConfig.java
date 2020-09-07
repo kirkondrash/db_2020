@@ -1,8 +1,8 @@
-package my_spring;
+package my_spring.system.configuration.impl;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.Delegate;
+import my_spring.system.configuration.Config;
 
 import java.util.Map;
 

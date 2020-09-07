@@ -1,7 +1,6 @@
 package my_spring;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import my_spring.system.annotations.Singleton;
 
 /**
  * @author Evgeny Borisov
