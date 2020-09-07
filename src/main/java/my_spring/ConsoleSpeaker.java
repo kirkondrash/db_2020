@@ -11,6 +11,6 @@ import lombok.Builder;
 public class ConsoleSpeaker implements Speaker {
     @Override
     public void speak(String message) {
-        System.out.println(this.hashCode()+message);
+        System.out.println(String.format("Hash: %s, msg: %s", this.hashCode(), message));
     }
 }

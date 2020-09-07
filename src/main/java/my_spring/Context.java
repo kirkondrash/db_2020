@@ -2,5 +2,5 @@ package my_spring;
 
 public interface Context {
 
-    Object getObject(Class type);
+    <U extends T,T> U getObject(Class<T> type);
 }

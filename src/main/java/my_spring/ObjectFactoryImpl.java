@@ -24,9 +24,9 @@ public class ObjectFactoryImpl implements ObjectFactory{
     }
 
     @SneakyThrows
-    public Object createObject(Class type) {
+    public <U extends T, T> U createObject(Class<T> type) {
         Class instantiatableClass = objectFactoryConfig.getInstantiatableClass(type);
-        Object instance = instantiatableClass.getConstructor().newInstance();
+        U instance = (U) instantiatableClass.getConstructor().newInstance();
 
         for (Field f: instantiatableClass.getDeclaredFields()) {
             List<AnnotationHandler> handlers = objectFactoryConfig.getFieldHandlers(f);

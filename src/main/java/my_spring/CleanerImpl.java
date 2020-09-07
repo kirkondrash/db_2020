@@ -6,13 +6,13 @@ package my_spring;
 public class CleanerImpl implements Cleaner {
 
 
-    @InjectRandomInt(min=1,max=3)
+    @InjectRandomInt(min=1,max=4)
     private int repeat;
 
     @Override
     public void clean() {
         for (int i = 0; i < repeat; i++) {
-            System.out.println(this.hashCode()+"Уборка");
+            System.out.println(String.format("Hash: %s, msg: %s", this.hashCode(), "Уборка"));
         }
     }
 }

@@ -8,6 +8,6 @@ package my_spring;
 public class StubSpeaker implements Speaker {
     @Override
     public void speak(String message) {
-        System.out.println(this.hashCode()+"STUB "+message);
+        System.out.println(String.format("Hash: %s, msg: %s", this.hashCode(), message));
     }
 }

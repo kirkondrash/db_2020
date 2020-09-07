@@ -2,7 +2,7 @@ package my_spring;
 
 public interface ObjectFactory {
 
-    Object createObject(Class type);
+    <U extends T, T> U createObject(Class<T> type);
 
     boolean isSingleton(Class type);
 }

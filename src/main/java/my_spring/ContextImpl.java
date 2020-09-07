@@ -18,10 +18,9 @@ public class ContextImpl implements Context {
         return context;
     }
 
-    @Override
-    public Object getObject(Class type) {
+    public <U extends T,T> U getObject(Class<T> type) {
         if (objectFactory.isSingleton(type)){
-            return singletons.computeIfAbsent(type, (t) -> objectFactory.createObject(t));
+            return (U) singletons.computeIfAbsent(type, (t) -> objectFactory.createObject(t));
         } else {
             return objectFactory.createObject(type);
         }
