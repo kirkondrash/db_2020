@@ -14,7 +14,7 @@ import java.util.Random;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RandomUtil {
 
-    private static Random random = new Random();
+    private static Random random = new Random(System.currentTimeMillis());
 
     public static int getIntBetween(int min, int max) {
         return random.nextInt(max - min) + min;
