@@ -2,6 +2,9 @@ package real_spring.quoters;
 
 import lombok.Setter;
 import my_spring.InjectRandomInt;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
@@ -9,11 +12,13 @@ import javax.annotation.PostConstruct;
  * @author Evgeny Borisov
  */
 
+@Component
 public class ShakespeareQuoter implements Quoter {
-    @Setter
+
+    @Value("${shake}")
     private String message;
 
-    @InjectRandomInt(min = 4,max = 7)
+    @Autowired
     private int repeat;
 
 

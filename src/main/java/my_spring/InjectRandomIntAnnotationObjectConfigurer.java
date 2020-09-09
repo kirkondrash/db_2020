@@ -3,12 +3,15 @@ package my_spring;
 import heroes.RandomUtil;
 import lombok.SneakyThrows;
 import org.reflections.ReflectionUtils;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
 
 /**
  * @author Evgeny Borisov
  */
+@Component
 public class InjectRandomIntAnnotationObjectConfigurer implements ObjectConfigurer {
     @Override
     @SneakyThrows
