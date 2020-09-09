@@ -4,21 +4,36 @@ import com.github.javafaker.Faker;
 import heroes.RandomUtil;
 import lombok.SneakyThrows;
 import org.fluttercode.datafactory.impl.DataFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author Evgeny Borisov
  */
+@Component
 public class MailMockProducer {
 
-    private MailDistributor mailDistributor = new MailDistributor();
-    private Faker faker = new Faker();
-    private DataFactory dataFactory = new DataFactory();
+    private MailDistributor mailDistributor;
+    private Faker faker;
+    private DataFactory dataFactory;
 
+    @Autowired
+    public MailMockProducer(MailDistributor mailDistributor, Faker faker, DataFactory dataFactory) {
+        this.mailDistributor = mailDistributor;
+        this.faker = faker;
+        this.dataFactory = dataFactory;
+    }
 
     @SneakyThrows
+    @PostConstruct
     public void sendMailsForever()  {
         while (true) {
-            int mailType = RandomUtil.getIntBetween(0, 3) + 1;
+            int mailType = RandomUtil.getIntBetween(0, 2) + 1;
             MailInfo mailInfo = MailInfo.builder()
                     .email(dataFactory.getEmailAddress())
                     .mailType(mailType)
@@ -30,10 +45,6 @@ public class MailMockProducer {
             }
             Thread.sleep(1000);
         }
-    }
-
-    public static void main(String[] args) {
-        new MailMockProducer().sendMailsForever();
     }
 }
 
