@@ -8,9 +8,9 @@ import lombok.Builder;
 @Builder
 public class Employee extends Person {
     private int salary;
-    public Employee(String name, int age) {
-        super(name, age);
-    }
+//    public Employee(String name, int age) {
+//        super(name, age);
+//    }
 
 
     public int getSalary() {
@@ -33,7 +33,7 @@ public class Employee extends Person {
 //    }
 
     public static void main(String[] args) {
-        Employee employee = new Employee("Lena", 18);
-        employee.printDetails();
+//        Employee employee = new Employee("Lena", 18);
+//        employee.printDetails();
     }
 }
